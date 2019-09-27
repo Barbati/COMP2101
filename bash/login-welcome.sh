@@ -9,19 +9,15 @@
 #   Use a format like this:
 #   It is HH:MM AM on weekday.
 
+#added the putput to the cowsay command
+
 ###############
 # Variables   #
 ###############
-title="Overlord"
-myname=$USER
-hostname=$(hostname)
+cowtalk=$(./welcome-message.sh)
 
 ###############
 # Main        #
 ###############
-cat <<EOF
 
-Welcome to planet $hostname, "$title $myname!"
-It is Currently $(date +"%I:%M %p") on $(date +"%A")
-
-EOF
+cowsay $cowtalk
