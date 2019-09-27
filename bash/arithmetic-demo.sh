@@ -17,6 +17,7 @@ sum=$((firstnum + secondnum))
 mins=$((firstnum - secondnum))
 tmes=$((firstnum * secondnum))
 dividend=$((firstnum / secondnum))
+mods=$((firstnum % secondnum))
 fpdividend=$(awk "BEGIN{printf \"%.2f\", $firstnum/$secondnum}")
 
 cat <<EOF
@@ -25,4 +26,5 @@ $firstnum minus $secondnum is $mins
 $firstnum times $secondnum is $tmes
 $firstnum divided by $secondnum is $dividend
   - More precisely, it is $fpdividend
+The modulus is $mods
 EOF
