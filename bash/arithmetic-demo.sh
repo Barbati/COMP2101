@@ -9,9 +9,13 @@
 #   - first divided by second gives X with a remainder of Y
 # Improve this script by calculating and displaying the first number raised to the power of the second number
 
-firstnum=5
-secondnum=2
+echo "Input a number"
+read firstnum
+echo "Input a Second Number"
+read secondnum
 sum=$((firstnum + secondnum))
+mins=$((firstnum - secondnum))
+tmes=$((firstnum * secondnum))
 dividend=$((firstnum / secondnum))
 fpdividend=$(awk "BEGIN{printf \"%.2f\", $firstnum/$secondnum}")
 
