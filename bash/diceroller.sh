@@ -15,3 +15,7 @@ echo "
 Rolling two six sided dice...
 $(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1 )) rolled
 "
+echo "
+Rolling five six sided dice...
+$(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1 )), $(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1 )), $(( RANDOM % 6 + 1)) rolled
+"
