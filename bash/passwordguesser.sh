@@ -10,7 +10,17 @@ echo "Please try to guess the password!"
 read myString
 referenceString="password"
 
-if [ "$myString" == "$referenceString" ]; then
-  echo "You guessed the password!"
-else echo "The Password Eludes You..."
+count=1
+
+while (( $count <= 2))
+do
+  if [ "$myString" == "$referenceString" ]; then
+    break
+  else echo "The Password Eludes You..."
+    read myString
+    count=$(( count+1 ))
+  fi
+done
+if [ $count != 0 ]; then
+  echo "you guessed the password!"
 fi
