@@ -12,12 +12,15 @@
 #  generate the average of the dice
 #  display a summary of what was rolled, and what the result was
 
+rollroll=$(( RANDOM + 1))
+
 # Tell the user we have started processing
 echo "Rolling..."
 # roll the dice and save the results
-die1=$(( RANDOM % 6 + 1))
-die2=$(( RANDOM % 6 + 1 ))
+die1=$(( RANDOM % $rollroll + 1))
+die2=$(( RANDOM % $rollroll + 1))
 # sum up the rolls
 sum=$(( die1 + die2 ))
+avg=$(( $sum / 2 ))
 # display the results
-echo "Rolled $die1, $die2 for a $sum"
+echo "Rolled $die1, $die2 for a sum of $sum, with an average of $avg"
