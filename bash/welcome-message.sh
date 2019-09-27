@@ -22,6 +22,6 @@ hostname=$(hostname)
 cat <<EOF
 
 Welcome to planet $hostname, "$title $myname!"
-It is Currently
+It is Currently $(date +"%I:%M %p") on $(date +"%A")
 
 EOF
