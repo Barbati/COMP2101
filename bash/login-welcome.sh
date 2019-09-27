@@ -14,7 +14,7 @@
 ###############
 # Variables   #
 ###############
-cowtalk=$(./welcome-message.sh)
+cowtalk=$(~/COMP2101/bash/welcome-message.sh)
 
 ###############
 # Main        #
