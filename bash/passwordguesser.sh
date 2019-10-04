@@ -21,6 +21,9 @@ do
     count=$(( count+1 ))
   fi
 done
-if [ $count != 0 ]; then
+if [[ $count == 3 ]]; then
+  echo "The Password Eludes You... Forever..."
+fi
+if [ $count != 3 ]; then
   echo "you guessed the password!"
 fi
