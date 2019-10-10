@@ -35,7 +35,8 @@
 
 Hostname=$(hostname)
 lANAddress=$(ip a s $(ip a |awk '/: e/{gsub(/:/,"");print $2}')|awk '/inet /{gsub(/\/.*/,"");print $2}')
-lANHostname=$(getent hosts $(ip a s $(ip a |awk '/: e/{gsub(/:/,"");print $2}'))|awk '/inet /{gsub(/\/.*/,"");print $2}' | awk '{print $2}')
+#lANHostname=$(getent hosts $(ip a s $(ip a |awk '/: e/{gsub(/:/,"");print $2}'))|awk '/inet /{gsub(/\/.*/,"");print $2}' | awk '{print $2}')
+lANHostname=$(getent hosts | grep $lANAddress | awk '{print $2}')
 externalIP=$(curl -s icanhazip.com)
 externalName=$(getent hosts $(curl -s icanhazip.com) | awk '{print $2}')
 dfRoute=$(ip route show | grep -i 'default via '| awk '{print $3}')
