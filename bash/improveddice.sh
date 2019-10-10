@@ -12,7 +12,7 @@
 #  generate the average of the dice
 #  display a summary of what was rolled, and what the result was
 
-rollroll=$(( RANDOM + 1))
+rollroll=$(( RANDOM % 6 + 1))
 
 # Tell the user we have started processing
 echo "Rolling..."
