@@ -16,8 +16,29 @@ while [ $# -gt 0 ]; do
 #             save the debug level in a variable to be available to use later in the script
 #             display an error if the user gave the -d option without a number after it
 # TASK 3: put anything that wasn't recognized on the command line into a variable for use later in the script
-  echo "Processing '$1'."
-
+  case "$1" in
+    -h | --help )
+    echo "$(basename $0) { -h/--help } { -v Verbose } { -d[1-4] Debug Mode level }"
+    exit
+    ;;
+    -v )
+    vbos="ON"
+    echo "Verbose mode activated"
+    ;;
+    -d[1-4] )
+    bug=$1
+    level="${bug:2:1}"
+    debug="ON"
+    echo "debug set to level $level"
+    ;;
+    -d* )
+    echo "invalid Debug mode option" >&2
+    exit 2
+    ;;
+    * )
+    anything+=("$1")
+    ;;
+  esac
   # each time through the loop, shift the arguments left
   # this decrements the argument count for us
   shift
@@ -27,3 +48,4 @@ while [ $# -gt 0 ]; do
   # go back to the top of the loop to see if anything is left to work on
 done
 echo "Done"
+echo "stored data check: " ${anything[@]}
